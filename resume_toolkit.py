@@ -8,7 +8,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
 import string
-import spacy
 from collections import Counter
 
 # Download NLTK data
@@ -18,13 +17,6 @@ def download_nltk_data():
     nltk.download('stopwords')
 
 download_nltk_data()
-
-# Load spaCy model
-@st.cache_resource
-def load_spacy():
-    return spacy.load("en_core_web_sm")
-
-nlp = load_spacy()
 
 # ---------- Black & White CSS ----------
 def set_bw_css():
